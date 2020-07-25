@@ -33,7 +33,8 @@ public class TestBase {
 	public void initializer(){
 		
 		if(prop.getProperty("browser").equals("chrome")){
-			System.setProperty("webdriver.chrome.driver", "D://Training//chromedriver_win32//chromedriver.exe");
+			String sChromeDriverPath = System.getProperty("user.dir")+"//BrowserDrivers//chromedriver_win32_V84//chromedriver.exe";
+			System.setProperty("webdriver.chrome.driver", sChromeDriverPath);
 			driver = new ChromeDriver();
 			driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 //			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
